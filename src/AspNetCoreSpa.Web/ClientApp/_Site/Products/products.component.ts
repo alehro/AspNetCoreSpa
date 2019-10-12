@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 
 import { IAppTableOptions, FieldTypes } from '@app/models';
-import { IProduct } from '../crud-shop.models';
+import { IProduct } from '../crud-shop/crud-shop.models';
 
 @Component({
   selector: 'appc-products',

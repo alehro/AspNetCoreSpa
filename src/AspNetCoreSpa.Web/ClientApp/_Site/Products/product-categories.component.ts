@@ -3,7 +3,7 @@ import { Validators } from '@angular/forms';
 
 import { IAppTableOptions, FieldTypes } from '@app/models';
 
-import { IProductCategory } from '../crud-shop.models';
+import { IProductCategory } from '../crud-shop/crud-shop.models';
 
 @Component({
   selector: 'appc-product-categories',

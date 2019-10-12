@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 
 import { IAppTableOptions, FieldTypes } from '@app/models';
-import { IOrder } from '../crud-shop.models';
+import { IOrder } from '../crud-shop/crud-shop.models';
 
 @Component({
   selector: 'appc-orders',

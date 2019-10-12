@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '@app/shared';
 
-import { GenderPipe } from './pipes';
+import { GenderPipe } from './gender.pipe';
 import { CrudShopComponent } from './crud-shop.component';
-import { CustomersComponent } from './customers/customers.component';
-import { ProductsComponent } from './products/products.component';
-import { OrdersComponent } from './orders/orders.component';
-import { ProductCategoriesComponent } from './product-categories/product-categories.component';
+import { CustomersComponent } from '../Customers/customers.component';
+import { ProductsComponent } from '../Products/products.component';
+import { OrdersComponent } from '../Orders/orders.component';
+import { ProductCategoriesComponent } from '../Products/product-categories.component';
 
 @NgModule({
   imports: [

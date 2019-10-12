@@ -9,5 +9,6 @@ export const routes: Routes = [
     { path: 'signalr', loadChildren: () => import('./examples/signalr/signalr.module').then(m => m.SignalrModule), data: { displayText: 'SignalR' } },
     { path: 'calendar', loadChildren: () => import('./examples/calendar/calendar.module').then(m => m.AppCalendarModule), data: { displayText: 'Calendar' } },
     { path: 'datatable', loadChildren: () => import('./examples/datatable/datatable.module').then(m => m.DatatableModule), data: { displayText: 'Datatable' } },
-    { path: 'crud-shop', loadChildren: () => import('./examples/crud-shop/crud-shop.module').then(m => m.CrudShopModule), data: { displayText: 'CRUD Shop' } },
+    //It looks like not used. There is an acting duplicate in crud-shop.module.ts
+    { path: 'crud-shop', loadChildren: () => import('../../../_Site/crud-shop/crud-shop.module').then(m => m.CrudShopModule), data: { displayText: 'CRUD Shop' } },
 ];

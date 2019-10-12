@@ -45,6 +45,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\customers\" />
+    <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\orders\" />
+    <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\pipes\" />
+    <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\product-categories\" />
+    <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\products\" />
     <Folder Include="Controllers\" />
     <Folder Include="Controllers\api\" />
   </ItemGroup>

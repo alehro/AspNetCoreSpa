@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Gender } from '../crud-shop.models';
+import { Gender } from './crud-shop.models';
 
 @Pipe({
     name: 'gender'

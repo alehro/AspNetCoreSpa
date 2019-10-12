@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { Validators } from '@angular/forms';
 
-import { ICustomer, Gender } from '../crud-shop.models';
+import { ICustomer, Gender } from '../crud-shop/crud-shop.models';
 import { FieldTypes, IAppTableOptions } from '@app/models';
 
 @Component({
