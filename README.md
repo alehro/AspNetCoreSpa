@@ -2,6 +2,11 @@
 [![Join the chat at https://gitter.im/asadsahi-AspNetCoreSpa/Lobby](https://badges.gitter.im/asadsahi-AspNetCoreSpa/Lobby.svg)](https://gitter.im/asadsahi-AspNetCoreSpa/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
+## TODO
+
+- Integrate dto.ts generation into npm start. Use parallel shell.
+- UPDATE: use dotnet watch instead of gulp. We are monitoring cs files after all.
+
 ## Features
 
 * [ASP.NET Core 2.2](http://www.dot.net/)

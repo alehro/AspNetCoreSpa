@@ -12,20 +12,31 @@
   ],
   "repository": "git+https://github.com/asadsahi/AspNetCoreSpa.git",
   "author": "Asad Sahi <asadazmat@gmail.com>",
+  "watch": {
+    "prebuild": {
+      "patterns": [
+        "ClientApp/_Site"
+      ],
+      "extensions": "cs",
+      "runOnChangeOnly": false
+    }
+  },
   "scripts": {
     "ng": "ng",
     "clean:install": "rimraf node_modules & yarn",
-    "start": "ng serve",
+    "start": "parallelshell \"ng serve\" npm-watch",
     "build": "ng build --prod",
     "build:ssr": "npm run build --project=ssr",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "prebuild": "gulp csharp_changed",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",
     "test:coverage": "jest --coverage",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json",
-    "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/aspnetcorespa/stats.json"
+    "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/aspnetcorespa/stats.json",
+    "test1": "parallelshell \"echo 1\" \"dir\""
   },
   "dependencies": {
     "@angular/animations": "8.1.0",
@@ -66,8 +77,14 @@
     "@types/jest": "^24.0.15",
     "@types/node": "12.0.12",
     "codelyzer": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-print": "5.0.2",
     "jest": "^24.8.0",
     "jest-preset-angular": "^7.1.1",
+    "npm-watch": "^0.6.0",
+    "parallelshell": "3.0.1",
     "protractor": "5.4.2",
     "ts-node": "8.3.0",
     "tslint": "5.18.0",
