@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreSpa.Web.Controllers.api
 {
-    public class CustomerController : BaseController
+    public class CustomerController : BaseController  
     {
         private readonly IUnitOfWork _uow;
-        public CustomerController(IUnitOfWork uow)
+        public CustomerController(IUnitOfWork uow) 
         {
             _uow = uow;
         }
         // GET: api/Customers
-        [HttpGet]
+        [HttpGet] 
         public IActionResult Get()
         {
             var allCustomers = _uow.Customers.GetAll();
-            return Ok(Mapper.Map<IEnumerable<CustomerViewModel>>(allCustomers));
+            return Ok(Mapper.Map<IEnumerable<CustomerDto>>(allCustomers));
         }
 
         // GET: api/Customers/5
@@ -27,12 +27,12 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get(int id)
         {
             var customer = _uow.Customers.Get(id);
-            return Ok(Mapper.Map<CustomerViewModel>(customer));
+            return Ok(Mapper.Map<CustomerDto>(customer));
         }
 
         // POST: api/Customers
         [HttpPost]
-        public void Post([FromBody] CustomerViewModel customer)
+        public void Post([FromBody] CustomerDto customer)
         {
             _uow.Customers.Add(Mapper.Map<Customer>(customer));
             _uow.SaveChanges();
@@ -40,7 +40,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Customers/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CustomerViewModel customer)
+        public void Put(int id, [FromBody] CustomerDto customer)
         {
             var cust = _uow.Customers.Get(id);
             cust.Name = customer.Name;

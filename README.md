@@ -6,6 +6,7 @@
 
 - Integrate dto.ts generation into npm start. Use parallel shell.
 - UPDATE: use dotnet watch instead of gulp. We are monitoring cs files after all.
+- UPDATE 2: reuse the old approach: add ts generator project as dependency to the web project. this will make dotnet watch to execute the ts generators post build step. But it won't work!! because here ts generator depends on the web....
 
 ## Features
 

@@ -7,7 +7,7 @@ namespace AspNetCoreSpa.Core.ViewModels
     {
         public AutoMapperProfile()
         {
-            CreateMap<Customer, CustomerViewModel>()
+            CreateMap<Customer, CustomerDto>()
                 .ReverseMap();
 
             CreateMap<Product, ProductViewModel>()
@@ -16,7 +16,7 @@ namespace AspNetCoreSpa.Core.ViewModels
             CreateMap<ProductCategory, ProductCategoryViewModel>()
                 .ReverseMap();
 
-            CreateMap<Order, OrderViewModel>()
+            CreateMap<Order, OrderDto>()
                 .ReverseMap();
         }
     }

@@ -19,7 +19,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get()
         {
             var allOrder = _uow.Orders.GetAll();
-            return Ok(Mapper.Map<IEnumerable<OrderViewModel>>(allOrder));
+            return Ok(Mapper.Map<IEnumerable<OrderDto>>(allOrder));
         }
 
         // GET: api/Order/5
@@ -27,12 +27,12 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get(int id)
         {
             var Order = _uow.Orders.Get(id);
-            return Ok(Mapper.Map<OrderViewModel>(Order));
+            return Ok(Mapper.Map<OrderDto>(Order));
         }
 
         // POST: api/Order
         [HttpPost]
-        public void Post([FromBody] OrderViewModel Order)
+        public void Post([FromBody] OrderDto Order)
         {
             _uow.Orders.Add(Mapper.Map<Order>(Order));
             _uow.SaveChanges();
@@ -40,7 +40,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Order/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] OrderViewModel order)
+        public void Put(int id, [FromBody] OrderDto order)
         {
             var o = _uow.Orders.Get(id);
             o.Discount = order.Discount;

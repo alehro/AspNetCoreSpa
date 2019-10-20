@@ -79,5 +79,14 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
+   <Target Name="TsGenerateAndRun">
+    <Exec Command="echo Executing several dotnet commands. Ts Generation is first. Dotnet run is second." />
+	<Exec Command="dotnet exec $(ProjectDir)..\CSharpToTypescriptApp\$(OutDir)CSharpToTypescriptApp.dll $(ProjectDir)ClientApp\_Site\_TsDtos C:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Core C:\work\my\CSharp2Typescript\CSharpToTypescriptApp\TestFiles2" />
+    <Exec Command="dotnet run" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo some command here" />
+  </Target>
 
 </Project>

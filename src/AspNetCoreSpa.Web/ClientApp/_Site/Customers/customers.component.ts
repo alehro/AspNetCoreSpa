@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { Validators } from '@angular/forms';
 
-import { ICustomer, Gender } from '../crud-shop/crud-shop.models';
+import { Gender } from '../crud-shop/crud-shop.models';
 import { FieldTypes, IAppTableOptions } from '@app/models';
+import { CustomerDto } from '../_TsDtos/CustomerDto';
 
 @Component({
   selector: 'appc-customers',
@@ -11,11 +12,12 @@ import { FieldTypes, IAppTableOptions } from '@app/models';
 })
 export class CustomersComponent implements OnInit {
   @ViewChild('addressTemplate', { static: true }) addressTemplate: TemplateRef<any>;
-  @ViewChild('genderTemplate', { static: true }) genderTemplate: TemplateRef<any>;
-  options: IAppTableOptions<ICustomer>;
+    @ViewChild('genderTemplate', { static: true }) genderTemplate: TemplateRef<any>;
+    options: IAppTableOptions<CustomerDto>;
   constructor() { }
 
-  ngOnInit() {
+    ngOnInit() {
+        let t1: CustomerDto = new CustomerDto();
     this.options = {
       title: 'Customer list',
       apiUrl: 'api/customer',

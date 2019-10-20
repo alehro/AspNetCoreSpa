@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCoreSpa.Core.ViewModels
 {
-    public class CustomerViewModel
+    public class CustomerDto
     {
         // Not required since this is not populated during put
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace AspNetCoreSpa.Core.ViewModels
         [Required]
         public Gender Gender { get; set; }
 
-        public ICollection<OrderViewModel> Orders { get; set; }
+        public ICollection<OrderDto> Orders { get; set; }
     }
 }
