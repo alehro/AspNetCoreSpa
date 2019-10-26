@@ -9,6 +9,8 @@ namespace AspNetCoreSpa.Core.ViewModels
     {
         // Not required since this is not populated during put
         public int Id { get; set; }
+        public int Id2 { get; set; }
+        public int Id3 { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

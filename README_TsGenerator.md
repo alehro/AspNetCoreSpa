@@ -2,11 +2,11 @@
 
 ## TODO
 
-- untangele tsgenerator from the web example
 - Continue working to deliver the generator as nuget package
 
 ## Done 
 
+- untangle tsgenerator from the web example
 - merge app to lib
 - config file at solution dir 
 - Pass ts header file as argument

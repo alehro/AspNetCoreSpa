@@ -3,6 +3,8 @@ import {ICollection, DateTimeOffset, Gender} from '../CsTypes';import {OrderDto}
 export class CustomerDto 
 {
  public id: number ;
+ public id2: number ;
+ public id3: number ;
 /*[Required]*/
  public name: string ;
 /*[Required]*/
