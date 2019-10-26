@@ -2,13 +2,15 @@
 
 ## TODO
 
-- Pass ts header file as argument
 - Continue working to deliver the generator as nuget package
 
 ## Done 
 
-+ Ts generator works with for the site. Tested on couple of dto files
-+ Running ts generator as part of dotnet watch: c:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Web>dotnet watch msbuild /t:TsGenerateAndRun
+- merge app to lib
+- config file at solution dir 
+- Pass ts header file as argument
+- Ts generator works with for the site. Tested on couple of dto files
+- Running ts generator as part of dotnet watch: c:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Web>dotnet watch msbuild /t:TsGenerateAndRun
 
 ## Obsolete
 
