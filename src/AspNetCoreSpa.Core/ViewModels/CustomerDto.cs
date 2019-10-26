@@ -7,7 +7,7 @@ namespace AspNetCoreSpa.Core.ViewModels
 {
     public class CustomerDto
     {
-        // Not required since this is not populated during put
+        // Not required since this is not populated during put 
         public int Id { get; set; }
         public int Id2 { get; set; }
         public int Id3 { get; set; }

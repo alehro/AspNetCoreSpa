@@ -19,6 +19,7 @@
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OAuth.Validation" Version="2.0.0" />
     <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="CSharpToTypescript2" Version="0.7.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Api.Analyzers" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="1.1.5" />
@@ -86,7 +87,11 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="dotnet exec c:\work\my\CSharp2Typescript\CSharpToTypescript\bin\Debug\netcoreapp2.2\CSharpToTypescript.dll $(ProjectDir)..\..\csharptotypescript.yml" />
+    <Exec Command="dotnet exec $(ProjectDir)..\..\.nuget\csharptotypescript2\0.7.1\lib\netcoreapp2.2\CSharpToTypescript.dll  $(ProjectDir)..\..\csharptotypescript.yml" />
   </Target>
+  <!--
+  <Target Name="CopyTsGenerator" AfterTargets="Build">
+    <Copy SourceFiles="$(PkgCSharpToTypescript2)\lib\netcoreapp2.2\CSharpToTypescript.dll" DestinationFolder="$(OutDir)" />
+</Target>-->
 
 </Project>

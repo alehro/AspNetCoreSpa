@@ -2,10 +2,13 @@
 
 ## TODO
 
-- Continue working to deliver the generator as nuget package
+- ! the executable cannot load any dependencies because they are not nearby
+- 
 
 ## Done 
 
+- used nuget.config to set local packages folder: VS2017 uses nuget 4.6 which cannot use   GeneratePathProperty="true" property. So, we cannot copy the tsgen dll to bin and then reference with relative path.
+- Continue working to deliver the generator as nuget package
 - untangle tsgenerator from the web example
 - merge app to lib
 - config file at solution dir 
@@ -21,3 +24,4 @@
 
 ## Notes
 - !! Runnding several commands from dotnet watch: c:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Web>dotnet watch msbuild /t:TsGenerateAndRun
+- https://natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/
