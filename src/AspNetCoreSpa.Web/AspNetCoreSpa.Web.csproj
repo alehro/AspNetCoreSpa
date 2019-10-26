@@ -81,7 +81,7 @@
   </Target>
    <Target Name="TsGenerateAndRun">
     <Exec Command="echo Executing several dotnet commands. Ts Generation is first. Dotnet run is second." />
-	<Exec Command="dotnet exec $(ProjectDir)..\CSharpToTypescriptApp\$(OutDir)CSharpToTypescriptApp.dll $(ProjectDir)ClientApp\_Site\_TsDtos C:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Core C:\work\my\CSharp2Typescript\CSharpToTypescriptApp\TestFiles2" />
+	<Exec Command="dotnet exec c:\work\my\CSharp2Typescript\CSharpToTypescript\bin\Debug\netcoreapp2.2\CSharpToTypescript.dll $(ProjectDir)..\..\csharptotypescript.yml"/>
     <Exec Command="dotnet run" />
   </Target>
 

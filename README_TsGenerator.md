@@ -2,6 +2,7 @@
 
 ## TODO
 
+- untangele tsgenerator from the web example
 - Continue working to deliver the generator as nuget package
 
 ## Done 
