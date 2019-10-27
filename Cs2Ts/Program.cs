@@ -6,15 +6,12 @@ namespace Cs2Ts
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ts Generation started...");
             if (args.Length != 1)
             {
                 Console.WriteLine(@"Please specify absolute path to config file as first argument");
                 throw new ArgumentException();
             }
             CSharpToTypescript.Runner.Run(args[0]);
-            Console.WriteLine("Ts Generation finished.");
-
         }
     }
 }

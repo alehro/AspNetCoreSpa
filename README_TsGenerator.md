@@ -2,16 +2,12 @@
 
 ## TODO
 
-
-- desided to use exe wrapper for the library: include deps manually in nuspec? https://stackoverflow.com/questions/16173568/build-nuget-package-automatically-including-referenced-dependencies
-dotnet publish and then use those files.
-- make simple console proeject, add cs2ts as dep, use it
-
-- ! the executable cannot load any dependencies because they are not nearby
-- 
+- do batle testing with all possible cases - TsGenerator2
+- update nuget package: its version to 1.0 and add usage to it
 
 ## Done 
 
+- make simple console proeject, add cs2ts as dep, use it
 - used nuget.config to set local packages folder: VS2017 uses nuget 4.6 which cannot use   GeneratePathProperty="true" property. So, we cannot copy the tsgen dll to bin and then reference with relative path.
 - Continue working to deliver the generator as nuget package
 - untangle tsgenerator from the web example
@@ -22,6 +18,10 @@ dotnet publish and then use those files.
 - Running ts generator as part of dotnet watch: c:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Web>dotnet watch msbuild /t:TsGenerateAndRun
 
 ## Obsolete
+
+- desided to use exe wrapper for the library: include deps manually in nuspec? https://stackoverflow.com/questions/16173568/build-nuget-package-automatically-including-referenced-dependencies
+dotnet publish and then use those files.
+- ! the executable cannot load any dependencies because they are not nearby
 
 - Integrate dto.ts generation into npm start. Use parallel shell.
 - UPDATE: use dotnet watch instead of gulp. We are monitoring cs files after all.
