@@ -2,6 +2,11 @@
 
 ## TODO
 
+
+- desided to use exe wrapper for the library: include deps manually in nuspec? https://stackoverflow.com/questions/16173568/build-nuget-package-automatically-including-referenced-dependencies
+dotnet publish and then use those files.
+- make simple console proeject, add cs2ts as dep, use it
+
 - ! the executable cannot load any dependencies because they are not nearby
 - 
 
