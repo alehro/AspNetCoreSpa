@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Cs2Ts": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\..\\..\\csharptotypescript.yml"
+    }
+  }
+}

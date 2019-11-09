@@ -10,7 +10,7 @@ namespace AspNetCoreSpa.Core.ViewModels
             CreateMap<Customer, CustomerDto>()
                 .ReverseMap();
 
-            CreateMap<Product, ProductViewModel>()
+            CreateMap<Product, ProductDto>()
                 .ReverseMap();
 
             CreateMap<ProductCategory, ProductCategoryViewModel>()

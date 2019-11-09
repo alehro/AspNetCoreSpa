@@ -13,6 +13,7 @@
     <UserSecretsId>aspnetcorespa-c23d27a4-eb88-4b18-9b77-2a93f3b15119</UserSecretsId>
     <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
     <DockerTargetOS>Linux</DockerTargetOS>
+    <Configurations>Debug;Release;DebugCs2Ts</Configurations>
   </PropertyGroup>
 
 
@@ -37,6 +38,13 @@
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\AutoMapperProfile.cs" />
+    <None Remove="ClientApp\_Site\Customers\CustomerDto.cs" />
+    <None Remove="ClientApp\_Site\Orders\OrderDto.cs" />
+    <None Remove="ClientApp\_Site\Products\ProductDto.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,12 +91,19 @@
 	
   </Target>
   <!--Unfortunately any console output is lost from this target if we do: dotnet watch run. But we actually don't need that a lot. So, it is mostly usability issue. During builds in VS the output is fine.--> 
-  <Target Name="GenerateTs" AfterTargets="Build">
+  <Target Name="GenerateTs" AfterTargets="Build" Condition=" '$(Configuration)' == 'Debug' ">
   <Exec Command="echo Ts generation started." />
-    <Exec Command="dotnet exec $(ProjectDir)..\..\Cs2Ts\$(OutDir)Cs2Ts.dll $(ProjectDir)..\..\csharptotypescript.yml" ConsoleToMSBuild="true">
+    <Exec Command="dotnet exec $(ProjectDir)..\Cs2Ts\$(OutDir)Cs2Ts.dll $(ProjectDir)..\..\csharptotypescript.yml" ConsoleToMSBuild="true">
 	<Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
 	</Exec>
 	 <Exec Command="echo Ts generation started." />
+	</Target>
+	<Target Name="GenerateTs" AfterTargets="Build" Condition=" '$(Configuration)' == 'DebugCs2Ts' ">
+	  <Exec Command="echo Ts generation started." />
+		<Exec Command="dotnet exec $(ProjectDir)..\Cs2Ts\$(OutDir)Cs2Ts.dll $(ProjectDir)..\..\csharptotypescript.yml" ConsoleToMSBuild="true">
+		<Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+		</Exec>
+		<Exec Command="echo Ts generation started." />
 	</Target>
   <!--
    <Target Name="TsGenerateAndRun">

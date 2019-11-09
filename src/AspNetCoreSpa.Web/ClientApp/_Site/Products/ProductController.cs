@@ -19,7 +19,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get()
         {
             var allProduct = _uow.Products.GetAll();
-            return Ok(Mapper.Map<IEnumerable<ProductViewModel>>(allProduct));
+            return Ok(Mapper.Map<IEnumerable<ProductDto>>(allProduct));
         }
 
         // GET: api/Product/5
@@ -27,12 +27,12 @@ namespace AspNetCoreSpa.Web.Controllers.api
         public IActionResult Get(int id)
         {
             var product = _uow.Products.Get(id);
-            return Ok(Mapper.Map<ProductViewModel>(product));
+            return Ok(Mapper.Map<ProductDto>(product));
         }
 
         // POST: api/Product
         [HttpPost]
-        public void Post([FromBody] ProductViewModel product)
+        public void Post([FromBody] ProductDto product)
         {
             _uow.Products.Add(Mapper.Map<Product>(product));
             _uow.SaveChanges();
@@ -40,7 +40,7 @@ namespace AspNetCoreSpa.Web.Controllers.api
 
         // PUT: api/Product/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] ProductViewModel product)
+        public void Put(int id, [FromBody] ProductDto product)
         {
             var p = _uow.Products.Get(id);
             p.Name = product.Name;

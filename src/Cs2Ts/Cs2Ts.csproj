@@ -3,10 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Configurations>Debug;Release;DebugCs2Ts</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSharpToTypescript2" Version="0.7.2" />
+    <PackageReference Include="CSharpToTypescript2" Version="0.7.8" />
   </ItemGroup>
 
 </Project>
