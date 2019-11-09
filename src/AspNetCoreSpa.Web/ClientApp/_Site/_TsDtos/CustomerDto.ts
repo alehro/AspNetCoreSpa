@@ -3,8 +3,6 @@ import { Gender, DateTimeOffset, ICollection, Dictionary, IEnumerable, IList, Li
 export class CustomerDto 
 {
  public id: number ;
- public id2: number ;
- public id3: number ;
 /*[Required]*/
  public name: string ;
 /*[Required]*/
@@ -20,5 +18,9 @@ export class CustomerDto
  public city: string ;
 /*[Required]*/
  public gender: Gender ;
- public orders: ICollection<OrderDto>  ; 
+ public orders: ICollection<OrderDto>  ;
+public totalPrice (): number
+{
+return this.orders.Sum(i => i.price);
+} 
 }

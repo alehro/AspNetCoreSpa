@@ -3,7 +3,7 @@ export type TestType = number;
 export type Gender = any
 export type DateTimeOffset = Date
 //unfortunately interface merging to Array doesn't really work. So, we need to play with the collections coming from c#
-type ArrayExt<T> = Array<T> & { Sum(selector: (a: T) => number): number; };
+export type ArrayExt<T> = Array<T> & { Sum(selector: (a: T) => number): number; };
 export type ICollection<T> = ArrayExt<T>;
 export type IEnumerable<T> = ArrayExt<T>;
 export type IList<T> = ArrayExt<T>;
@@ -26,6 +26,11 @@ Array.prototype["Sum"] = function <T>(this: T[], selector: (a: T) => number) {
     return this.reduce((prev, cur) => {
         return prev + selector(cur);
     }, 0);
+};
+//if we don't invoke anything from file then the TS gets compiled but it doesn't guarantie that the JS file is included. I presume because of tree shaking procedure. So, let's make sure the file gets not shaken out.
+export var makeSureFileLoaded = () => {
+    let v1 = 1;
+    let v2 = 2;
 };
 
 

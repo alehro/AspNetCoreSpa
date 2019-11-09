@@ -32,6 +32,7 @@ import {
 import { UppercasePipe } from './pipes/uppercase.pipe';
 // Services
 import { CustomDateFormatter, CustomNgbDateNativeUTCAdapter } from './services';
+import { makeSureFileLoaded } from '../../../_Site/CsTypes';
 
 @NgModule({
   imports: [
@@ -118,3 +119,6 @@ export class SharedModule { }
 
 export * from './components';
 export * from './pipes';
+
+let sure = makeSureFileLoaded();
+let s2 = sure;

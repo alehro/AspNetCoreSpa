@@ -91,14 +91,14 @@
 	
   </Target>
   <!--Unfortunately any console output is lost from this target if we do: dotnet watch run. But we actually don't need that a lot. So, it is mostly usability issue. During builds in VS the output is fine.--> 
-  <Target Name="GenerateTs" AfterTargets="Build" Condition=" '$(Configuration)' == 'Debug' ">
+  <Target Name="GenerateTs1" AfterTargets="Build" Condition=" '$(Configuration)' == 'Debug' ">
   <Exec Command="echo Ts generation started." />
     <Exec Command="dotnet exec $(ProjectDir)..\Cs2Ts\$(OutDir)Cs2Ts.dll $(ProjectDir)..\..\csharptotypescript.yml" ConsoleToMSBuild="true">
 	<Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
 	</Exec>
 	 <Exec Command="echo Ts generation started." />
 	</Target>
-	<Target Name="GenerateTs" AfterTargets="Build" Condition=" '$(Configuration)' == 'DebugCs2Ts' ">
+	<Target Name="GenerateTs2" AfterTargets="Build" Condition=" '$(Configuration)' == 'DebugCs2Ts' ">
 	  <Exec Command="echo Ts generation started." />
 		<Exec Command="dotnet exec $(ProjectDir)..\Cs2Ts\$(OutDir)Cs2Ts.dll $(ProjectDir)..\..\csharptotypescript.yml" ConsoleToMSBuild="true">
 		<Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />

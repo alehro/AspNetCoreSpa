@@ -6,6 +6,8 @@ namespace AspNetCoreSpa.Core.Entities
     {
         public int Id { get; set; }
         public decimal Discount { get; set; }
+        //We have order details but I am lazy. For my demo purpose it is easy to have the second price here.
+        public decimal Price { get; set; }
         public string Comments { get; set; }
 
         public int CustomerId { get; set; }

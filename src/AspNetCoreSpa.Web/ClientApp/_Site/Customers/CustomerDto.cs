@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.Linq;
 
 namespace AspNetCoreSpa.Core.ViewModels
 {
@@ -9,9 +9,6 @@ namespace AspNetCoreSpa.Core.ViewModels
     {
         // Not required since this is not populated during put 
         public int Id { get; set; }
-        public int Id2 { get; set; }   
-        public int Id3 { get; set; }
-
         [Required]
         public string Name { get; set; }
         [Required]
@@ -29,5 +26,9 @@ namespace AspNetCoreSpa.Core.ViewModels
         public Gender Gender { get; set; }
 
         public ICollection<OrderDto> Orders { get; set; }
+
+        public decimal TotalPrice() {
+            return Orders.Sum(i=>i.Price);
+        }
     }
 }

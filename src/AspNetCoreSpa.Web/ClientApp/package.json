@@ -53,6 +53,7 @@
     "@aspnet/signalr-protocol-msgpack": "1.1.0",
     "@ng-bootstrap/ng-bootstrap": "4.2.1",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
+    "@types/lodash": "^4.14.146",
     "@swimlane/ngx-datatable": "15.0.2",
     "angular-calendar": "0.27.12",
     "angularx-flatpickr": "6.1.0",

@@ -4,22 +4,28 @@ using AspNetCoreSpa.Core.ViewModels;
 using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class CustomerController : BaseController  
     {
+        readonly ApplicationDbContext _context;
+
         private readonly IUnitOfWork _uow;
-        public CustomerController(IUnitOfWork uow) 
+        public CustomerController(IUnitOfWork uow, ApplicationDbContext context) 
         {
             _uow = uow;
+            _context = context;
         }
         // GET: api/Customers
         [HttpGet] 
         public IActionResult Get()
         {
-            var allCustomers = _uow.Customers.GetAll();
-            return Ok(Mapper.Map<IEnumerable<CustomerDto>>(allCustomers));
+            var res = _context.Set<Customer>().Include(i => i.Orders);
+
+            //var allCustomers = _uow.Customers.GetAll();
+            return Ok(Mapper.Map<IEnumerable<CustomerDto>>(res));
         }
 
         // GET: api/Customers/5

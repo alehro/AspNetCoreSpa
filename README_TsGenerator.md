@@ -28,5 +28,7 @@ dotnet publish and then use those files.
 - UPDATE 2: reuse the old approach: add ts generator project as dependency to the web project. this will make dotnet watch to execute the ts generators post build step. But it won't work!! because here ts generator depends on the web....
 
 ## Notes
+- to work with local version of Cs2Ts it is better to use separate configuration: 
+	AspCoreAngularTemplate\src\AspNetCoreSpa.Web>dotnet watch run --configuration DebugCs2Ts
 - !! Runnding several commands from dotnet watch: c:\work\my\AspCoreAngularTemplate\src\AspNetCoreSpa.Web>dotnet watch msbuild /t:TsGenerateAndRun
 - https://natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/
