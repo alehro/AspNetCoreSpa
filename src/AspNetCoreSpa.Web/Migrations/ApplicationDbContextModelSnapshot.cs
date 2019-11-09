@@ -48,7 +48,7 @@ namespace AspNetCoreSpa.Web.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<int>("Gender");
+                    b.Property<string>("Gender");
 
                     b.Property<string>("Name");
 

@@ -5,10 +5,19 @@ using System.Linq;
 
 namespace AspNetCoreSpa.Core.ViewModels
 {
-    public class CustomerDto
-    {
-        // Not required since this is not populated during put 
-        public int Id { get; set; }
+   
+    [TranspilesToEnum]
+    /*Why use strings instead of enums: https://softwareengineering.stackexchange.com/questions/284530/why-store-flags-enums-in-a-database-as-strings-instead-of-integers
+     * https://stackoverflow.com/questions/14893005/using-integer-vs-string-for-a-type-value-database-and-class-design
+     * Or just trust me
+    */
+    public class GenderDtoe {
+        public const string None = "None";
+        public const string Male = "Male";
+        public const string Female = "Female";
+    }
+    public class CustomerDto : BaseDto
+    {       
         [Required]
         public string Name { get; set; }
         [Required]
@@ -20,10 +29,11 @@ namespace AspNetCoreSpa.Core.ViewModels
         public string PhoneNumber { get; set; }
         [Required]
         public string Address { get; set; }
-        [Required]
+        //[Required]
         public string City { get; set; }
         [Required]
-        public Gender Gender { get; set; }
+        //public Gender Gender { get; set; }
+        public string Gender { get; set; }
 
         public ICollection<OrderDto> Orders { get; set; }
 

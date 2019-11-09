@@ -1,8 +1,7 @@
 ﻿namespace AspNetCoreSpa.Core.ViewModels
 {
-    public class OrderDto
+    public class OrderDto: BaseDto
     {
-        public int Id { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
         public string Comments { get; set; }

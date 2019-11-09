@@ -12,7 +12,8 @@ namespace AspNetCoreSpa.Core.Entities
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
-        public Gender Gender { get; set; }
+        //public Gender Gender { get; set; }
+        public string Gender { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }

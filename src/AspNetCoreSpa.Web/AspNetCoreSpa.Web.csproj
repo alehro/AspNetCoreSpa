@@ -32,6 +32,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1" />
     <PackageReference Include="NetEscapades.AspNetCore.SecurityHeaders" Version="0.9.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+	 <PackageReference Include="OpenIddict" Version="2.0.0" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,14 +44,22 @@
 
   <ItemGroup>
     <None Remove="ClientApp\AutoMapperProfile.cs" />
+    <None Remove="ClientApp\_Site\Common\Attributes.cs" />
+    <None Remove="ClientApp\_Site\Common\BaseDto.cs" />
     <None Remove="ClientApp\_Site\Customers\CustomerDto.cs" />
+    <None Remove="ClientApp\_Site\Entities\AuditableEntity.cs" />
+    <None Remove="ClientApp\_Site\Entities\ContactUs.cs" />
+    <None Remove="ClientApp\_Site\Entities\Culture.cs" />
+    <None Remove="ClientApp\_Site\Entities\Customer.cs" />
+    <None Remove="ClientApp\_Site\Entities\IAuditableEntity.cs" />
+    <None Remove="ClientApp\_Site\Entities\IEntityBase.cs" />
+    <None Remove="ClientApp\_Site\Entities\Order.cs" />
+    <None Remove="ClientApp\_Site\Entities\OrderDetail.cs" />
+    <None Remove="ClientApp\_Site\Entities\Product.cs" />
+    <None Remove="ClientApp\_Site\Entities\ProductCategory.cs" />
+    <None Remove="ClientApp\_Site\Entities\Resource.cs" />
     <None Remove="ClientApp\_Site\Orders\OrderDto.cs" />
     <None Remove="ClientApp\_Site\Products\ProductDto.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\AspNetCoreSpa.Core\AspNetCoreSpa.Core.csproj" />
-    <ProjectReference Include="..\AspNetCoreSpa.Infrastructure\AspNetCoreSpa.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

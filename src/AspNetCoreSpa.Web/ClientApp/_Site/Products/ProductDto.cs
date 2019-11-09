@@ -2,12 +2,10 @@
 
 namespace AspNetCoreSpa.Core.ViewModels
 {
-    public class ProductDto
-    {
-        public int Id { get; set; }
-        public int Id1 { get; set; }
+    public class ProductDto : BaseDto
+    {      
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string Description { get; set; } 
         public string Icon { get; set; }
         public decimal BuyingPrice { get; set; }
         public decimal SellingPrice { get; set; }

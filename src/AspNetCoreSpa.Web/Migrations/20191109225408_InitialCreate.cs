@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AspNetCoreSpa.Web.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,7 +37,7 @@ namespace AspNetCoreSpa.Web.Migrations
                     PhoneNumber = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
-                    Gender = table.Column<int>(nullable: false),
+                    Gender = table.Column<string>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)
                 },
@@ -101,6 +101,7 @@ namespace AspNetCoreSpa.Web.Migrations
                     UpdatedDate = table.Column<DateTime>(nullable: false),
                     CreatedDate = table.Column<DateTime>(nullable: false),
                     Discount = table.Column<decimal>(nullable: false),
+                    Price = table.Column<decimal>(nullable: false, defaultValue:1.1m),
                     Comments = table.Column<string>(nullable: true),
                     CustomerId = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),

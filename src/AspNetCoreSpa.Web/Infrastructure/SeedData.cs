@@ -1,5 +1,6 @@
 ﻿using AspNetCoreSpa.Core;
 using AspNetCoreSpa.Core.Entities;
+using AspNetCoreSpa.Core.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -92,7 +93,7 @@ namespace AspNetCoreSpa.Infrastructure
                         Address = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                     Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet",
                         City = "Lorem Ipsum " + i,
-                        Gender = i % 2 == 0 ? Gender.Male : Gender.Female,
+                        Gender = i % 2 == 0 ? GenderDtoe.Male : GenderDtoe.Female,
                         UpdatedDate = DateTime.UtcNow,
                         CreatedDate = DateTime.UtcNow
                     });

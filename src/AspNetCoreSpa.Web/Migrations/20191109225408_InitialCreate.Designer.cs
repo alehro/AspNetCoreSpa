@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspNetCoreSpa.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190531143100_Initial")]
-    partial class Initial
+    [Migration("20191109225408_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,7 +50,7 @@ namespace AspNetCoreSpa.Web.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<int>("Gender");
+                    b.Property<string>("Gender");
 
                     b.Property<string>("Name");
 
@@ -87,6 +87,8 @@ namespace AspNetCoreSpa.Web.Migrations
                     b.Property<int>("CustomerId");
 
                     b.Property<decimal>("Discount");
+
+                    b.Property<decimal>("Price");
 
                     b.Property<DateTime>("UpdatedAt");
 

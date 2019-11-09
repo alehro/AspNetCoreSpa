@@ -3,7 +3,7 @@ import { Validators } from '@angular/forms';
 
 import { Gender } from '../crud-shop/crud-shop.models';
 import { FieldTypes, IAppTableOptions } from '@app/models';
-import { CustomerDto } from '../_TsDtos/CustomerDto';
+import { CustomerDto, GenderDtoe_ } from '../_TsDtos/CustomerDto';
 import { HttpClient } from '@angular/common/http';
 import { OrderDto } from '../_TsDtos/OrderDto';
 import { ArrayExt} from '../CsTypes';
@@ -19,6 +19,8 @@ export class CustomersComponent implements OnInit {
     @ViewChild('genderTemplate', { static: true }) genderTemplate: TemplateRef<any>;
     options: IAppTableOptions<CustomerDto>;
     totalTotals: number;
+    malesCount: number;
+    femalesCount: number;
   constructor(private http: HttpClient) { }
 
     async ngOnInit() {
@@ -36,7 +38,7 @@ export class CustomersComponent implements OnInit {
             { prop: 'phoneNumber', name: 'Phone number', fieldType: FieldTypes.Number },
             { prop: 'address', name: 'Address', fieldType: FieldTypes.Textarea },
               //{ prop: 'city', name: 'City', fieldType: FieldTypes.Textbox },
-              { prop: 'totalPrice()', name: 'Total', fieldType: FieldTypes.Number },
+            //  { prop: 'totalPrice()', name: 'Total', fieldType: FieldTypes.Number },
             {
               prop: 'gender',
               name: 'Gender',
@@ -50,13 +52,12 @@ export class CustomersComponent implements OnInit {
           ]
         };
         //let v22 = V22();
-
+        //demo of working with transpiled expressions (including some linq)
         let customers = await this.http.get<CustomerDto[]>("api/customer").toPromise();
-        let cs2 = new CustomerDto();//{ or:""};
-        cs2.orders = <ArrayExt<OrderDto>><any>[{ id: 1, price: 2, discount: 0, comments: 'none' }];
-        let r2 = cs2.totalPrice();
+        //let cs2 = new CustomerDto();//{ or:""};
+        //cs2.orders = <ArrayExt<OrderDto>><any>[{ id: 1, price: 2, discount: 0, comments: 'none' }];
+        //let r2 = cs2.totalPrice();
         let css = customers.map(i => {
-
             //let cs = { ...new CustomerDto(), ...i};
             let cs0 = new CustomerDto();
             let cs = _.extend(cs0, i);
@@ -64,9 +65,10 @@ export class CustomersComponent implements OnInit {
         });
         this.totalTotals = css.reduce((sum, customer: CustomerDto) => {
             return sum + customer.totalPrice();
-
         }, 0);
-        
+        //demo of working with enums
+        this.malesCount = css.filter(i => i.gender == GenderDtoe_("Male")).length;
+        this.femalesCount = css.filter(i => i.gender == GenderDtoe_("Female")).length;
   }
 
 }
