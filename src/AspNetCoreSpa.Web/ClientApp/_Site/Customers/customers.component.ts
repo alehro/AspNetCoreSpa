@@ -39,14 +39,16 @@ export class CustomersComponent implements OnInit {
             { prop: 'address', name: 'Address', fieldType: FieldTypes.Textarea },
               //{ prop: 'city', name: 'City', fieldType: FieldTypes.Textbox },
             //  { prop: 'totalPrice()', name: 'Total', fieldType: FieldTypes.Number },
+            //{ prop: 'gender', name: 'Gender', fieldType: FieldTypes.Textbox },
+
             {
               prop: 'gender',
               name: 'Gender',
               cellTemplate: this.genderTemplate,
               fieldType: FieldTypes.Select,
-              fieldOptions: [
-                { key: Gender.Male, value: 'Male' },
-                { key: Gender.Female, value: 'Female' }
+                fieldOptions: [
+                    { key: GenderDtoe_("Male"), value: 'Male' },
+                    { key: GenderDtoe_("Female"), value: 'Female' }
               ]
             }
           ]
