@@ -1,7 +1,7 @@
 
 
 ## TODO
-
+- ? more elaborated test cases, clean up.
 - do batle testing with all possible cases - TsGenerator2
 - update nuget package: its version to 1.0 and add usage to it
 
