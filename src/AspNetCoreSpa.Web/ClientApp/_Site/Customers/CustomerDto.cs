@@ -28,7 +28,7 @@ namespace AspNetCoreSpa.Core.ViewModels
         [Required]
         public string PhoneNumber { get; set; }
         [Required]
-        public string Address { get; set; }
+        public string Address { get; set; } 
         //[Required]
         public string City { get; set; }
         [Required]

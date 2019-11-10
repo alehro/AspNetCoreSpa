@@ -25,3 +25,10 @@ Both this features are nothing but mere manifistation of core software developme
 + VS Project - Visual Studio project.
 + Clien/server API definition - clien/server contract. As I recollect contract stuff is well described in "Code Complete" book.
 ...
+
+## Literature
+
+- "Algorythms to live by", Brian Christian, Tom Griffiths. This book is to think about search/sort operations our brain does while working on code.
+- "Your brain at work", David Rock. This is about our brain. Provides some understanding of the price of the search/sort.
+- "Data Structures and Algorithms". Aho Hopcroft, Ullman. This is to remind about trees (apply to folders in our case), computation complexity etc. Good old classics.
+- Here should be something about code readability and simplicity. Can't recollect for now. May be even something of Donald Knuth or Leslie Lamport.
