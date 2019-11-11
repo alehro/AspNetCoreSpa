@@ -68,8 +68,6 @@
     <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\pipes\" />
     <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\product-categories\" />
     <Folder Include="ClientApp\src\app\+examples\examples\crud-shop\products\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Controllers\api\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
