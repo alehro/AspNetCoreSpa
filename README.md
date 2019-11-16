@@ -24,7 +24,7 @@ Both these features are nothing but mere manifistation of core software developm
 
 ## Vocabulary
 
-+ Business project is essentially all the files we have. For our purpose it closely maps to the Visual Studio solution
++ Business project. For our purpose it closely maps to the Visual Studio solution
 + VS Project - Visual Studio project.
 + Clien/server API definition - clien/server contract. As I recollect contract stuff is well described in "Code Complete" book.
 ...
