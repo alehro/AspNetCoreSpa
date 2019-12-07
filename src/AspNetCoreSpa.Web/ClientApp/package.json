@@ -29,7 +29,6 @@
     "build:ssr": "npm run build --project=ssr",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prebuild": "gulp csharp_changed",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand",

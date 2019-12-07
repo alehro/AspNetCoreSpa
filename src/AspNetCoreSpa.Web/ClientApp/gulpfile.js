@@ -15,7 +15,7 @@ var path = {
     //   src: ['./Content/*.scss', './Content/**/*.scss', './_ACE/**/*.scss', './_Legacy/**/*.scss']
     // } 
 }
-
+//Obsolete. The Ts generation is integrated into dotnet cli.
 gulp.task('csharp_changed', function () {
     return gulp.src(path.cs.src)
         .pipe(changed(path.cs.out, { extension: '.cs' }))

@@ -1,12 +1,47 @@
 
 
 ## TODO
-- ? more elaborated test cases, clean up.
-- do batle testing with all possible cases - TsGenerator2
-- update nuget package: its version to 1.0 and add usage to it
+
+- instantiation of List, Dictionary, in ctors. string.Format.
+//Caution, extend with caution: (https://github.com/Microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work).
+class ArrayExt<T> extends Array<T> {
+    constructor(...items: Array<T>) {
+        super(...items);
+        Object.setPrototypeOf(this, Object.create(ArrayExt.prototype));
+    }
+    Sum = function <T>(this: T[], selector: (a: T) => number) {
+        return this.reduce((prev, cur) => {
+            return prev + selector(cur);
+        }, 0);
+    };
+    //Sum = <T>(selector: (a: T)=>number) =>{
+    //    return this.reduce((prev, cur) => {
+    //        return prev + selector(cur);
+    //    }, 0);
+    //};
+    //logCount() {
+    //    console.log("Count: " + this.length)
+    //}
+}
+
+
+export type ICollection<T> = ArrayExt<T>;
+export type IEnumerable<T> = ArrayExt<T>;
+export type IList<T> = ArrayExt<T>;
+export class List<T> extends ArrayExt<T>{
+    constructor(...items: Array<T>) {
+        super(...items);
+        Object.setPrototypeOf(this, Object.create(List.prototype));
+    }
+}
+- tell in docs about not seeng output while in watch mode is Okay
+- tell about CsTypes
 
 ## Done 
 
+- ? more elaborated test cases, clean up.
+- do batle testing with all possible cases - TsGenerator2
+- update nuget package: its version to 1.0 and add usage to it
 - make simple console proeject, add cs2ts as dep, use it
 - used nuget.config to set local packages folder: VS2017 uses nuget 4.6 which cannot use   GeneratePathProperty="true" property. So, we cannot copy the tsgen dll to bin and then reference with relative path.
 - Continue working to deliver the generator as nuget package
