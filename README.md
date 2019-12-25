@@ -33,7 +33,7 @@ Both these features are nothing but mere manifistation of core software developm
 
 [C# to Typescript tool](README_Cs2Ts.md)
 
-[Domain Driven Solution Structure (FOS is synonym)] (https://alehro.github.io/docs/FeatureOrientedStructureOfSolution.html)
+[Domain Driven Solution Structure](https://alehro.github.io/docs/FeatureOrientedStructureOfSolution.html)
 
 ## Literature
 
