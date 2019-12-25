@@ -10,7 +10,7 @@
     "angular-cli",
     "typescript"
   ],
-  "repository": "git+https://github.com/asadsahi/AspNetCoreSpa.git",
+  "repository": "git+https://github.com/alehro/AspNetCoreSpa.git",
   "author": "Asad Sahi <asadazmat@gmail.com>",
   "watch": {
     "prebuild": {
