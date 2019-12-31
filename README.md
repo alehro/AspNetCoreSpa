@@ -33,6 +33,8 @@ Both these features are nothing but mere manifistation of core software developm
 
 [C# to Typescript tool](README_Cs2Ts.md)
 
+[Domain Driven Solution Structure](https://alehro.github.io/docs/FeatureOrientedStructureOfSolution.html)
+
 ## Literature
 
 - "Algorythms to live by", Brian Christian, Tom Griffiths. This book is to think about search/sort operations our brain does while working on code.
