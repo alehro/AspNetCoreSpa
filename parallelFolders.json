@@ -3,6 +3,25 @@
     "path": null,
     "selection": null,
     "line": 0,
+    "name": "Pug",
+    "otherJson": null,
+    "expanded": false,
+    "children": [
+      {
+        "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\home\\home.component.html",
+        "selection": null,
+        "line": 0,
+        "name": null,
+        "otherJson": null,
+        "expanded": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": null,
+    "selection": null,
+    "line": 0,
     "name": "Ts Generation",
     "otherJson": null,
     "expanded": false,

@@ -11,20 +11,20 @@
     "typescript"
   ],
   "repository": "git+https://github.com/alehro/AspNetCoreSpa.git",
-  "author": "Asad Sahi <asadazmat@gmail.com>",
+  "author": "Alexander Khromov <alehro00@gmail.com>",
   "watch": {
     "prebuild": {
       "patterns": [
-        "ClientApp/_Site"
+        "_Site"
       ],
-      "extensions": "cs",
+      "extensions": "pug",
       "runOnChangeOnly": false
     }
   },
   "scripts": {
     "ng": "ng",
     "clean:install": "rimraf node_modules & yarn",
-    "start": "ng serve",
+    "start": "parallelshell \"ng serve\" npm-watch",
     "build": "ng build --prod",
     "build:ssr": "npm run build --project=ssr",
     "lint": "ng lint",
@@ -35,7 +35,8 @@
     "test:coverage": "jest --coverage",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json",
     "analyze": "npm run build -- --stats-json && webpack-bundle-analyzer dist/aspnetcorespa/stats.json",
-    "test1": "parallelshell \"echo 1\" \"dir\""
+    "test1": "parallelshell \"echo 1\" \"dir\"",
+    "prebuild": "gulp pug_changed"
   },
   "dependencies": {
     "@angular/animations": "8.1.0",
@@ -77,6 +78,7 @@
     "@types/jest": "^24.0.15",
     "@types/node": "12.0.12",
     "codelyzer": "^5.1.0",
+    "gulp-pug": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.0",
     "gulp-newer": "^1.4.0",
