@@ -3,9 +3,37 @@
     "path": null,
     "selection": null,
     "line": 0,
+    "name": "MobileTree",
+    "otherJson": null,
+    "expanded": true,
+    "children": [
+      {
+        "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\+examples\\examples.routes.ts",
+        "selection": null,
+        "line": 0,
+        "name": null,
+        "otherJson": null,
+        "expanded": false,
+        "children": []
+      },
+      {
+        "path": "src\\AspNetCoreSpa.Web\\ClientApp\\_Site\\MobileTree\\MobileTree.ts",
+        "selection": null,
+        "line": 0,
+        "name": null,
+        "otherJson": null,
+        "expanded": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": null,
+    "selection": null,
+    "line": 0,
     "name": "Pug",
     "otherJson": null,
-    "expanded": false,
+    "expanded": true,
     "children": [
       {
         "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\home\\home.component.html",

@@ -21,6 +21,11 @@
       "runOnChangeOnly": false
     }
   },
+  "styles": [
+    "node_modules/primeicons/primeicons.css",
+    "node_modules/primeng/resources/themes/nova-light/theme.css",
+    "node_modules/primeng/resources/primeng.min.css"
+  ],
   "scripts": {
     "ng": "ng",
     "clean:install": "rimraf node_modules & yarn",
@@ -64,6 +69,8 @@
     "font-awesome": "4.7.0",
     "lodash": "4.17.11",
     "oidc-client": "1.8.2",
+    "primeng": "8.1.1",
+    "primeicons": "2.0.0",
     "preboot": "7.0.0",
     "rxjs": "6.5.2",
     "zone.js": "~0.9.1"
