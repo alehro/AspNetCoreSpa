@@ -4,7 +4,7 @@
 </ng-template>
 
 <!-- header component -->
-<appc-header></appc-header>
+<appc-header *ngIf="showHeader"></appc-header>
 
 <!-- component routing placeholder -->
 <main role="main">
@@ -12,4 +12,4 @@
 </main>
 
 <!-- footer component -->
-<appc-footer></appc-footer>
+<appc-footer  *ngIf="showHeader"></appc-footer>

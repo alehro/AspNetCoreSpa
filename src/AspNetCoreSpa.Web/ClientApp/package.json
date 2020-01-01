@@ -21,11 +21,6 @@
       "runOnChangeOnly": false
     }
   },
-  "styles": [
-    "node_modules/primeicons/primeicons.css",
-    "node_modules/primeng/resources/themes/nova-light/theme.css",
-    "node_modules/primeng/resources/primeng.min.css"
-  ],
   "scripts": {
     "ng": "ng",
     "clean:install": "rimraf node_modules & yarn",

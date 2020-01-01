@@ -8,11 +8,13 @@ import { routes } from './examples.routes';
 import { FormsPlaygroundComponent } from './examples/forms-playground/forms-playground.component';
 import { MobileTree } from '../../../_Site/MobileTree/MobileTree';
 import { TreeModule } from "primeng/tree";
+import { ContextMenuModule } from "primeng/contextmenu";
 
 @NgModule({
     imports: [
         SharedModule,
         TreeModule,
+        ContextMenuModule,
         RouterModule.forChild(routes)
     ],
     declarations: [ExamplesComponent,
