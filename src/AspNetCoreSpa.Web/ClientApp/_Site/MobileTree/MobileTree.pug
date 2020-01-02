@@ -1,5 +1,11 @@
 include ../Common/Base.pug
+	//form(name="form1")
+.mobile-tree
+	p-tree( [value]="treeData", (onNodeExpand)="onNodeExpand($event)", (onNodeCollapse)="onNodeCollapse($event)",  [contextMenu]="cm", selectionMode="single", [(selection)]="selectedNode" )
+		ng-template(let-node, pTemplate="default")
+			div(*ngIf="node.editing")
+				input([(ngModel)]="node.label", type="text", style="width:100%", class="ui-inputtext", (keyup.enter)="onNodeChange(node)", (blur)="onNodeChange(node)")
+			div(*ngIf="!node.editing")
+				span {{node.label}}
 
-p-tree( [value]="treeData", (onNodeExpand)="onNodeExpand($event)", (onNodeCollapse)="onNodeCollapse($event)",  [contextMenu]="cm")
-
-p-contextMenu(#cm, [model]="menuItems")
+	p-contextMenu(#cm, [model]="menuItems", (onShow)="onShowMenu($event)")

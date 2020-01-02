@@ -1,5 +1,5 @@
 // Font awesome
-$fa-font-path : '../node_modules/font-awesome/fonts';
+$fa-font-path: '../node_modules/font-awesome/fonts';
 @import '../node_modules/font-awesome/scss/font-awesome';
 
 // Your variable overrides
@@ -41,3 +41,10 @@ $fa-font-path : '../node_modules/font-awesome/fonts';
 @import "./assets/styles/icons.css";
 @import "../node_modules/@swimlane/ngx-datatable/release/themes/bootstrap.css";
 // @import "../node_modules/@swimlane/ngx-datatable/release/themes/material.css";
+
+.mobile-tree {
+    margin-top: 5px;
+    .ui-tree {
+        width: 100%;
+    }
+}

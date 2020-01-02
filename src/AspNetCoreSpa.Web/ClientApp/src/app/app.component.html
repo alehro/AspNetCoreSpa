@@ -7,7 +7,7 @@
 <appc-header *ngIf="showHeader"></appc-header>
 
 <!-- component routing placeholder -->
-<main role="main">
+<main role="main"  [ngStyle]="{'margin-top':showHeader?'60px':'0'}">
   <router-outlet #o="outlet"></router-outlet>
 </main>
 

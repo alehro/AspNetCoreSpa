@@ -1,3 +1,13 @@
 <!DOCTYPE html>
-<p-tree [value]="treeData" (onNodeExpand)="onNodeExpand($event)" (onNodeCollapse)="onNodeCollapse($event)" [contextMenu]="cm"></p-tree>
-<p-contextMenu #cm [model]="menuItems"></p-contextMenu>
+<!--form(name="form1")-->
+<div class="mobile-tree">
+  <p-tree [value]="treeData" (onNodeExpand)="onNodeExpand($event)" (onNodeCollapse)="onNodeCollapse($event)" [contextMenu]="cm" selectionMode="single" [(selection)]="selectedNode">
+    <ng-template let-node pTemplate="default">
+      <div *ngIf="node.editing">
+        <input class="ui-inputtext" [(ngModel)]="node.label" type="text" style="width:100%" (keyup.enter)="onNodeChange(node)" (blur)="onNodeChange(node)">
+      </div>
+      <div *ngIf="!node.editing"><span>{{node.label}}</span></div>
+    </ng-template>
+  </p-tree>
+  <p-contextMenu #cm [model]="menuItems" (onShow)="onShowMenu($event)"></p-contextMenu>
+</div>
