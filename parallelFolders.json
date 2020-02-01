@@ -5,7 +5,7 @@
     "line": 0,
     "name": "MobileTree",
     "otherJson": null,
-    "expanded": true,
+    "expanded": false,
     "children": [
       {
         "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\+examples\\examples.routes.ts",
@@ -33,10 +33,29 @@
     "line": 0,
     "name": "Pug",
     "otherJson": null,
-    "expanded": true,
+    "expanded": false,
     "children": [
       {
         "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\home\\home.component.html",
+        "selection": null,
+        "line": 0,
+        "name": null,
+        "otherJson": null,
+        "expanded": false,
+        "children": []
+      }
+    ]
+  },
+  {
+    "path": null,
+    "selection": null,
+    "line": 0,
+    "name": "Registration",
+    "otherJson": null,
+    "expanded": false,
+    "children": [
+      {
+        "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\components\\header\\header.component.html",
         "selection": null,
         "line": 0,
         "name": null,

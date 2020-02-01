@@ -11,6 +11,8 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using AspNetCoreSpa.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 
 namespace AspNetCoreSpa.Web
 {
@@ -47,6 +49,8 @@ namespace AspNetCoreSpa.Web
             services.AddResponseCompression();
 
             services.AddCustomDbContext();
+
+            //TODO1: services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
             services.AddMemoryCache();
 
