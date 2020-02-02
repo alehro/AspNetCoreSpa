@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'oidc-client';
+import * as toastr from 'toastr'; 
 
 import { AppService, AuthService } from '@app/services';
 
@@ -44,7 +45,9 @@ export class HeaderComponent implements OnInit {
         this.authService.login();
     }
     async register() {
+        toastr.info("test toastr");
         let res = await this.http.post("api/account/Register", { email: "m1@m.com", password: "Password123?", confirmPassword: "Password123?" }).toPromise();
+        
         //let res = await this.http.get("api/account/register", {}).toPromise();
         //let res = await this.http.get("api/account").toPromise();
         let r2 = res;
