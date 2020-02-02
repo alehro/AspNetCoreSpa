@@ -1,6 +1,8 @@
 import { ErrorHandler, Injectable, Injector } from '@angular/core';
 
 import { ToastrService } from '@app/toastr';
+import { HttpErrorResponse } from '@angular/common/http';
+import * as toastr from 'toastr'; 
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
@@ -14,8 +16,16 @@ export class GlobalErrorHandler implements ErrorHandler {
       this.injector.get(ToastrService).error(this.formatErrors(errorResponse.error.errors), errorResponse.error.message, { onActivateTick: true, enableHtml: true });
     } else {
       // All other errors including 500
-      const error = (errorResponse && errorResponse.rejection) ? errorResponse.rejection.error : errorResponse;
-      this.injector.get(ToastrService).error(error, 'Unknown error', { onActivateTick: true });
+        //const error = (errorResponse && errorResponse.rejection) ? errorResponse.rejection.error : errorResponse;
+        let msg = 'Unknown error';
+        if ((errorResponse && errorResponse.rejection)) {
+            let er: HttpErrorResponse = errorResponse.rejection.error;
+            msg = er.message || msg;
+            toastr.error(msg);
+        } else {
+            this.injector.get(ToastrService).error(errorResponse, 'Unknown error', { onActivateTick: true });
+        }
+      
       // IMPORTANT: Don't Rethrow the error otherwise it will not emit errors after once
       // https://stackoverflow.com/questions/44356040/angular-global-error-handler-working-only-once
       // throw errorResponse;
