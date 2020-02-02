@@ -5,6 +5,19 @@ using AspNetCoreSpa.Infrastructure;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+
+
+//namespace AspNetCoreSpa.Core.ViewModels
+//{
+//    public class ApplicationUser : IdentityUser
+//    {
+//        sadfsd
+//        //public virtual ICollection<Item> Items { get; set; }
+//    }
+//}
+
 namespace AspNetCoreSpa.Web.Controllers.api
 {
     public class ProductController : BaseController

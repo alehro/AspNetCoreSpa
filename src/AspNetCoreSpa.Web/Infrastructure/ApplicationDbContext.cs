@@ -1,4 +1,6 @@
 ﻿using AspNetCoreSpa.Core.Entities;
+using AspNetCoreSpa.Core.ViewModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AspNetCoreSpa.Infrastructure
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext :  IdentityDbContext<ApplicationUser>
     {
         public string CurrentUserId { get; set; }
         public DbSet<Customer> Customers { get; set; }

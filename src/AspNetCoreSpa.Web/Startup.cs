@@ -48,9 +48,11 @@ namespace AspNetCoreSpa.Web
 
             services.AddResponseCompression();
 
-            services.AddCustomDbContext();
+            var n1 = typeof(AccountController);
 
-            //TODO1: services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.AddCustomDbContext();
+            
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
             services.AddMemoryCache();
 

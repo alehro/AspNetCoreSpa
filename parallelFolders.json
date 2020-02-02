@@ -52,12 +52,30 @@
     "line": 0,
     "name": "Registration",
     "otherJson": null,
-    "expanded": false,
+    "expanded": true,
     "children": [
+      {
+        "path": "src\\AspNetCoreSpa.Web\\Infrastructure\\ApplicationDbContext.cs",
+        "selection": null,
+        "line": 0,
+        "name": null,
+        "otherJson": null,
+        "expanded": false,
+        "children": []
+      },
       {
         "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\components\\header\\header.component.html",
         "selection": null,
         "line": 0,
+        "name": null,
+        "otherJson": null,
+        "expanded": true,
+        "children": []
+      },
+      {
+        "path": "src\\AspNetCoreSpa.Web\\ClientApp\\src\\app\\components\\header\\header.component.ts",
+        "selection": "register",
+        "line": 44,
         "name": null,
         "otherJson": null,
         "expanded": false,

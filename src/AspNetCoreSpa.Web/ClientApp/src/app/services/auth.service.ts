@@ -23,9 +23,9 @@ export class AuthService {
         // });
     }
 
-    register() {
-        location.href = `${this.userManager.settings.authority}/account/register?returnUrl=${location.href}`;
-    }
+    //register() {
+    //    location.href = `${this.userManager.settings.authority}/account/register?returnUrl=${location.href}`;
+    //}
     profile() {
         location.href = `${this.userManager.settings.authority}/manage/index`;
     }

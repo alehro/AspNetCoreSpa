@@ -4,6 +4,7 @@ import { User } from 'oidc-client';
 import { AppService, AuthService } from '@app/services';
 
 import { routes } from '../../+examples/examples.routes';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'appc-header',
@@ -17,7 +18,8 @@ export class HeaderComponent implements OnInit {
 
     constructor(
         private authService: AuthService,
-        private appService: AppService
+        private appService: AppService,
+        private http: HttpClient
     ) { }
 
     get isLoggedIn(): boolean {
@@ -41,8 +43,12 @@ export class HeaderComponent implements OnInit {
     login() {
         this.authService.login();
     }
-    register() {
-        this.authService.register();
+    async register() {
+        let res = await this.http.post("api/account/Register", { email: "m1@m.com", password: "Password123?", confirmPassword: "Password123?" }).toPromise();
+        //let res = await this.http.get("api/account/register", {}).toPromise();
+        //let res = await this.http.get("api/account").toPromise();
+        let r2 = res;
+        //this.authService.register();
     }
     profile() {
         this.authService.profile();

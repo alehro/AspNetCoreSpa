@@ -3,7 +3,7 @@
 namespace AspNetCoreSpa.Core.ViewModels
 {
     public class ProductDto : BaseDto
-    {      
+    {
         public string Name { get; set; }
         public string Description { get; set; } 
         public string Icon { get; set; }
