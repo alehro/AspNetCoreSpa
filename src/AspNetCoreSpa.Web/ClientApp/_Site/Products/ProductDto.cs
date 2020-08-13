@@ -5,6 +5,7 @@ namespace AspNetCoreSpa.Core.ViewModels
     public class ProductDto : BaseDto
     {
         public string Name { get; set; }
+        public string Name2 { get; set; }  
         public string Description { get; set; } 
         public string Icon { get; set; }
         public decimal BuyingPrice { get; set; }
